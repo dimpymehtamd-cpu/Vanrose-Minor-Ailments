@@ -3072,7 +3072,7 @@ $('#sampleSubmit').addEventListener('click',async()=>{
 
 /* 7) IDLE */
 let idleTimer=null,warnTimer=null,countTimer=null;
-function startIdle(){return;/* inactivity auto-reset disabled */}
+function startIdle(){clearIdle();/* inactivity auto-reset disabled - form never times out */}
 function stopIdle(){clearIdle();$('#idle').classList.remove('show');}
 function clearIdle(){clearTimeout(idleTimer);clearTimeout(warnTimer);clearInterval(countTimer);}
 function bumpIdle(){if(cur().screen==='attract')return;$('#idle').classList.remove('show');startIdle();}
